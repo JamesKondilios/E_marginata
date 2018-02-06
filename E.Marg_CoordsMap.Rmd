@@ -23,16 +23,15 @@ EMar_acccessions <- read.csv('https://raw.githubusercontent.com/LaMariposa/eucal
 
 ```{r GetMap}
 WA_map <-  get_googlemap('Bunbury', zoom = 7, size = c(400, 600), scale = 2)
-#WA_map <-  get_map('Bunbury', zoom = 7) #size = c(400, 360), scale = 2)
 WA_map <- ggmap(WA_map) # show map
 WA_map
 
 ```
 
 
-```{r PlotCoords}
+```{r PlotCoords }
 
-WA_map + geom_point(data = EMar_acccessions,aes(EMar_acccessions$Longitude,EMar_acccessions$Latitude),size = 0.2) + ggtitle("E. Marginata Distribution by Geographical Coordinates.") + theme(plot.margin = unit(c(0.5,0,0,0), "cm")) + xlab("Lon") + ylab("Lat")
+WA_map + geom_point(data = EMar_acccessions,aes(EMar_acccessions$Longitude,EMar_acccessions$Latitude),size = 0.5) + ggtitle("E. Marginata Distribution by Geographical Coordinates.") + theme(plot.margin = unit(c(0.5,0,0,0), "cm")) + xlab("Lon") + ylab("Lat")
 
 ```
 
